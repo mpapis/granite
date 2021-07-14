@@ -5,6 +5,7 @@ require 'active_support/callbacks'
 
 require 'granite/action/types'
 require 'granite/action/error'
+require 'granite/action/instrumentation'
 require 'granite/action/performing'
 require 'granite/action/performer'
 require 'granite/action/precondition'
@@ -48,6 +49,7 @@ module Granite
     include Policies
     include Projectors
     prepend AssignAttributes
+    prepend Instrumentation
 
     handle_exception ActiveRecord::RecordInvalid do |e|
       errors.messages.deep_merge!(e.record.errors.messages) do |_, this, other|

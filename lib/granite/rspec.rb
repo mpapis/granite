@@ -1,5 +1,6 @@
 require 'granite/rspec/action_helpers'
 require 'granite/rspec/have_projector'
+require 'granite/rspec/perform_action'
 require 'granite/rspec/projector_helpers'
 require 'granite/rspec/raise_validation_error'
 require 'granite/rspec/satisfy_preconditions'
